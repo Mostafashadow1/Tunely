@@ -64,7 +64,7 @@ export function Footer() {
 
           <div className="flex items-center gap-4 text-slate-400">
             <a
-              href="https://tunely-phi.vercel.app/"
+              href="https://tone-ly.vercel.app/"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 hover:text-cyan-400 transition"
