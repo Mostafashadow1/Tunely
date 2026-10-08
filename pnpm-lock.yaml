@@ -35,9 +35,9 @@ importers:
       tailwind-merge:
         specifier: ^3.7.0
         version: 3.7.0
-      tunely:
+      tonely:
         specifier: workspace:*
-        version: link:../../packages/tunely
+        version: link:../../packages/tonely
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4.0.0
@@ -61,7 +61,7 @@ importers:
         specifier: ^5.8.0
         version: 5.9.3
 
-  packages/tunely:
+  packages/tonely:
     devDependencies:
       '@types/react':
         specifier: ^19.0.0

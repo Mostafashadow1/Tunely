@@ -3,15 +3,15 @@
 import React, { useState } from 'react';
 import { Copy, Check, Terminal } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { tunely } from 'tunely';
+import { tonely } from 'tonely';
 
 export type PackageManager = 'pnpm' | 'npm' | 'yarn' | 'bun';
 
 export const INSTALL_COMMANDS: Record<PackageManager, string> = {
-  pnpm: 'pnpm add tunely',
-  npm: 'npm install tunely',
-  yarn: 'yarn add tunely',
-  bun: 'bun add tunely',
+  pnpm: 'pnpm add tonely',
+  npm: 'npm install tonely',
+  yarn: 'yarn add tonely',
+  bun: 'bun add tonely',
 };
 
 interface InstallTabsProps {
@@ -25,7 +25,7 @@ export function InstallTabs({ compact = false, className }: InstallTabsProps) {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(INSTALL_COMMANDS[selected]);
-    tunely.pop({ volume: 0.4 });
+    tonely.pop({ volume: 0.4 });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -41,7 +41,7 @@ export function InstallTabs({ compact = false, className }: InstallTabsProps) {
               type="button"
               onClick={() => {
                 setSelected(pm);
-                tunely.click({ volume: 0.25 });
+                tonely.click({ volume: 0.25 });
               }}
               className={cn(
                 'px-2 py-0.5 rounded-lg text-[11px] font-mono transition cursor-pointer',
@@ -89,7 +89,7 @@ export function InstallTabs({ compact = false, className }: InstallTabsProps) {
                 type="button"
                 onClick={() => {
                   setSelected(pm);
-                  tunely.click({ volume: 0.25 });
+                  tonely.click({ volume: 0.25 });
                 }}
                 className={cn(
                   'px-2.5 py-1 rounded-lg text-xs font-mono font-medium transition-all cursor-pointer',

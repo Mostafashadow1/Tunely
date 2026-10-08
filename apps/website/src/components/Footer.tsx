@@ -3,12 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { Terminal, Github, ExternalLink } from "lucide-react";
-import { tunely } from "tunely";
+import { tonely } from "tonely";
 
 export function Footer() {
   const copyInstall = () => {
-    navigator.clipboard.writeText("pnpm add tunely");
-    tunely.pop({ volume: 0.4 });
+    navigator.clipboard.writeText("pnpm add tonely");
+    tonely.pop({ volume: 0.4 });
   };
 
   return (
@@ -20,7 +20,7 @@ export function Footer() {
             Ready to give your web applications tactile auditory polish?
           </h3>
           <p className="mx-auto mt-2 max-w-xl text-sm text-slate-400">
-            Install the zero-dependency Tunely package now and start delighting
+            Install the zero-dependency Tonely package now and start delighting
             your users with instant harmonic cues.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -29,13 +29,13 @@ export function Footer() {
               className="flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400 active:scale-95 cursor-pointer"
             >
               <Terminal className="h-4 w-4" />
-              <span>pnpm add tunely</span>
+              <span>pnpm add tonely</span>
             </button>
             <a
               href="https://github.com/Mostafashadow1/tunely"
               target="_blank"
               rel="noreferrer"
-              onClick={() => tunely.click({ volume: 0.25 })}
+              onClick={() => tonely.click({ volume: 0.25 })}
               className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white cursor-pointer"
             >
               <Github className="h-4 w-4" />
@@ -58,7 +58,7 @@ export function Footer() {
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="font-bold text-slate-300">TUNELY</span>
+            <span className="font-bold text-slate-300">TONELY</span>
             <span>• MIT License</span>
           </div>
 
@@ -74,7 +74,7 @@ export function Footer() {
             </a>
             <span>•</span>
             <a
-              href="https://www.npmjs.com/package/tunely"
+              href="https://www.npmjs.com/package/tonely"
               target="_blank"
               rel="noreferrer"
               className="hover:text-rose-400 transition"

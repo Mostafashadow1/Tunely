@@ -1,5 +1,5 @@
 {
-  "name": "tunely",
+  "name": "tonely",
   "version": "0.1.0",
   "description": "Zero-asset, ultra-lightweight synthesized UI sound design system for Next.js, React, Vue, Svelte, and Vanilla JS powered by procedural Web Audio API",
   "type": "module",
@@ -9,11 +9,11 @@
   "homepage": "https://tunely-phi.vercel.app/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mostafashadow1/tunely.git"
+    "url": "git+https://github.com/Mostafashadow1/tonely.git"
   },
   "bugs": {
     "type": "git",
-    "url": "https://github.com/Mostafashadow1/tunely/issues"
+    "url": "https://github.com/Mostafashadow1/tonely/issues"
   },
   "keywords": [
     "sound",

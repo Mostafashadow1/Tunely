@@ -1,11 +1,11 @@
 'use client';
 
-import React, { createContext, useContext, useState, useMemo, useEffect } from 'react';
-import { tunely, createTunely } from '../index';
-import type { TunelyInstance, TunelyConfig, SoundTheme } from '../types';
+import React, { createContext, useContext, useState, useMemo } from 'react';
+import { tonely, createTonely } from '../index';
+import type { TonelyInstance, TonelyConfig, SoundTheme } from '../types';
 
-interface TunelyContextValue {
-  instance: TunelyInstance;
+interface TonelyContextValue {
+  instance: TonelyInstance;
   volume: number;
   setVolume: (v: number) => void;
   muted: boolean;
@@ -14,15 +14,15 @@ interface TunelyContextValue {
   setTheme: (t: SoundTheme) => void;
 }
 
-const TunelyContext = createContext<TunelyContextValue | null>(null);
+const TonelyContext = createContext<TonelyContextValue | null>(null);
 
-export interface TunelyProviderProps {
+export interface TonelyProviderProps {
   children: React.ReactNode;
-  config?: TunelyConfig;
+  config?: TonelyConfig;
 }
 
-export function TunelyProvider({ children, config }: TunelyProviderProps) {
-  const [instance] = useState(() => (config ? createTunely(config) : tunely));
+export function TonelyProvider({ children, config }: TonelyProviderProps) {
+  const [instance] = useState(() => (config ? createTonely(config) : tonely));
   const [volume, setVolumeState] = useState(() => instance.getVolume());
   const [muted, setMutedState] = useState(() => instance.isMuted());
   const [theme, setThemeState] = useState<SoundTheme>(() => instance.getTheme());
@@ -55,9 +55,13 @@ export function TunelyProvider({ children, config }: TunelyProviderProps) {
     [instance, volume, muted, theme]
   );
 
-  return <TunelyContext.Provider value={value}>{children}</TunelyContext.Provider>;
+  return <TonelyContext.Provider value={value}>{children}</TonelyContext.Provider>;
 }
 
-export function useTunelyContext(): TunelyContextValue | null {
-  return useContext(TunelyContext);
+export function useTonelyContext(): TonelyContextValue | null {
+  return useContext(TonelyContext);
 }
+
+// Backward compatibility aliases
+export const TunelyProvider = TonelyProvider;
+export const useTunelyContext = useTonelyContext;

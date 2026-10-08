@@ -2,15 +2,15 @@
 
 import React, { useState } from 'react';
 import { Code2, Copy, Check } from 'lucide-react';
-import { tunely } from 'tunely';
+import { tonely } from 'tonely';
 
 const CODE_EXAMPLES = {
   react: `'use client';
 
-import { useTunely } from 'tunely/react';
+import { useTonely } from 'tonely/react';
 
 export function CheckoutButton() {
-  const { success, error, click } = useTunely({ theme: 'glass' });
+  const { success, error, click } = useTonely({ theme: 'glass' });
 
   const handleCheckout = async () => {
     click(); // Instant tactile response on click
@@ -32,20 +32,20 @@ export function CheckoutButton() {
   nextServerActions: `'use client';
 
 import { useTransition } from 'react';
-import { tunely } from 'tunely';
+import { tonely } from 'tonely';
 import { updateUserProfile } from '@/actions/user';
 
 export function ProfileForm() {
   const [isPending, startTransition] = useTransition();
 
   const onSubmit = (formData: FormData) => {
-    tunely.click();
+    tonely.click();
     startTransition(async () => {
       const result = await updateUserProfile(formData);
       if (result.ok) {
-        tunely.success();
+        tonely.success();
       } else {
-        tunely.error();
+        tonely.error();
       }
     });
   };
@@ -59,53 +59,53 @@ export function ProfileForm() {
 }`,
 
   sonner: `import { toast as baseToast } from 'sonner';
-import { tunely } from 'tunely';
+import { tonely } from 'tonely';
 
 // Universal Sound-Enhanced Toast Helper
 export const toast = {
   success: (msg: string) => {
-    tunely.success();
+    tonely.success();
     return baseToast.success(msg);
   },
   error: (msg: string) => {
-    tunely.error();
+    tonely.error();
     return baseToast.error(msg);
   },
   warning: (msg: string) => {
-    tunely.warning();
+    tonely.warning();
     return baseToast.warning(msg);
   },
   info: (msg: string) => {
-    tunely.info();
+    tonely.info();
     return baseToast.info(msg);
   },
 };`,
 
-  vanilla: `import { tunely } from 'tunely';
+  vanilla: `import { tonely } from 'tonely';
 
 // 1. Direct micro-interactions
 document.querySelector('#btn-save').addEventListener('click', () => {
-  tunely.click();
+  tonely.click();
 });
 
 // 2. HTTP Status feedback (200 -> success, 500 -> error)
 const res = await fetch('/api/checkout', { method: 'POST' });
-tunely.fromStatus(res.status);
+tonely.fromStatus(res.status);
 
 // 3. One-line fetch wrapper
-const enhancedFetch = tunely.wrapFetch();
+const enhancedFetch = tonely.wrapFetch();
 await enhancedFetch('/api/data'); // Auto-plays sound on 200 or 4xx!`,
 
   vue: `<script setup>
-import { tunely } from 'tunely';
+import { tonely } from 'tonely';
 
 const onSave = async () => {
-  tunely.click();
+  tonely.click();
   try {
     await savePost();
-    tunely.success();
+    tonely.success();
   } catch (e) {
-    tunely.error();
+    tonely.error();
   }
 };
 </script>
@@ -121,7 +121,7 @@ export function CodeDemos() {
 
   const copyCode = () => {
     navigator.clipboard.writeText(CODE_EXAMPLES[activeCodeTab]);
-    tunely.pop({ volume: 0.4 });
+    tonely.pop({ volume: 0.4 });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -145,7 +145,7 @@ export function CodeDemos() {
         {/* Framework Tabs */}
         <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
           {[
-            { id: 'react', label: 'React / useTunely' },
+            { id: 'react', label: 'React / useTonely' },
             { id: 'nextServerActions', label: 'Next.js 15 Server Actions' },
             { id: 'sonner', label: 'Sonner / Shadcn UI' },
             { id: 'vanilla', label: 'Vanilla JS / Fetch' },
@@ -155,7 +155,7 @@ export function CodeDemos() {
               key={tab.id}
               onClick={() => {
                 setActiveCodeTab(tab.id as keyof typeof CODE_EXAMPLES);
-                tunely.click({ volume: 0.25 });
+                tonely.click({ volume: 0.25 });
               }}
               className={`rounded-lg px-3.5 py-1.5 text-xs font-medium transition cursor-pointer ${
                 activeCodeTab === tab.id

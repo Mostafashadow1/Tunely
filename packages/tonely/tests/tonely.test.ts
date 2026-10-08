@@ -1,17 +1,17 @@
-import { describe, it, expect, vi } from 'vitest';
-import { tunely, createTunely, soundFromStatus } from '../src/index';
+import { describe, it, expect } from 'vitest';
+import { tonely, createTonely, soundFromStatus } from '../src/index';
 
-describe('Tunely Core Library', () => {
+describe('Tonely Core Library', () => {
   it('should initialize default singleton instance', () => {
-    expect(tunely).toBeDefined();
-    expect(typeof tunely.play).toBe('function');
-    expect(typeof tunely.success).toBe('function');
-    expect(typeof tunely.error).toBe('function');
-    expect(typeof tunely.click).toBe('function');
+    expect(tonely).toBeDefined();
+    expect(typeof tonely.play).toBe('function');
+    expect(typeof tonely.success).toBe('function');
+    expect(typeof tonely.error).toBe('function');
+    expect(typeof tonely.click).toBe('function');
   });
 
   it('should allow volume adjustments', () => {
-    const custom = createTunely({ volume: 0.5 });
+    const custom = createTonely({ volume: 0.5 });
     expect(custom.getVolume()).toBe(0.5);
 
     custom.setVolume(0.85);
@@ -26,7 +26,7 @@ describe('Tunely Core Library', () => {
   });
 
   it('should allow muting and unmuting', () => {
-    const custom = createTunely();
+    const custom = createTonely();
     expect(custom.isMuted()).toBe(false);
 
     custom.setMuted(true);
@@ -37,7 +37,7 @@ describe('Tunely Core Library', () => {
   });
 
   it('should support themes', () => {
-    const custom = createTunely({ theme: 'glass' });
+    const custom = createTonely({ theme: 'glass' });
     expect(custom.getTheme()).toBe('glass');
 
     custom.setTheme('retro');
@@ -61,7 +61,7 @@ describe('Tunely Core Library', () => {
   });
 
   it('should resolve safely without throwing when play() is called in tests', async () => {
-    const res = await tunely.play('success');
+    const res = await tonely.play('success');
     expect(typeof res).toBe('boolean');
   });
 });

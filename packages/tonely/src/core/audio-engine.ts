@@ -1,5 +1,5 @@
 import { isBrowser, isAudioSupported } from '../utils/ssr';
-import type { TunelyConfig, SoundTheme } from '../types';
+import type { TonelyConfig, SoundTheme } from '../types';
 
 /**
  * Procedural Web Audio Engine
@@ -14,7 +14,7 @@ export class AudioEngine {
   private theme: SoundTheme = 'modern';
   private unlocked: boolean = false;
 
-  constructor(config?: TunelyConfig) {
+  constructor(config?: TonelyConfig) {
     if (config?.volume !== undefined) this.volume = Math.max(0, Math.min(1, config.volume));
     if (config?.theme !== undefined) this.theme = config.theme;
     if (config?.muted !== undefined) this.muted = Boolean(config.muted);

@@ -1,22 +1,24 @@
 'use client';
 
 import { useCallback } from 'react';
-import { tunely } from '../index';
-import { useTunelyContext } from './context';
+import { tonely } from '../index';
+import { useTonelyContext } from './context';
 import type { SoundName, SoundOptions, SoundTheme } from '../types';
 
-export interface UseTunelyOptions {
+export interface UseTonelyOptions {
   volume?: number;
   theme?: SoundTheme;
 }
 
+export type UseTunelyOptions = UseTonelyOptions;
+
 /**
  * React Hook for playing synthesized UI sounds.
- * Integrates seamlessly with TunelyProvider or works standalone.
+ * Integrates seamlessly with TonelyProvider or works standalone.
  */
-export function useTunely(defaultOptions?: UseTunelyOptions) {
-  const context = useTunelyContext();
-  const instance = context?.instance ?? tunely;
+export function useTonely(defaultOptions?: UseTonelyOptions) {
+  const context = useTonelyContext();
+  const instance = context?.instance ?? tonely;
 
   const play = useCallback(
     (name: SoundName, opts?: SoundOptions) => {
@@ -70,4 +72,7 @@ export function useTunely(defaultOptions?: UseTunelyOptions) {
   };
 }
 
-export default useTunely;
+// Backward compatibility alias
+export const useTunely = useTonely;
+
+export default useTonely;

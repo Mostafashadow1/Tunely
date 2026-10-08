@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { isBrowser, isAudioSupported } from '../src/utils/ssr';
-import { createTunely } from '../src/index';
+import { createTonely } from '../src/index';
 
 describe('SSR Safety Guards', () => {
   it('should detect environment safely', () => {
@@ -10,7 +10,7 @@ describe('SSR Safety Guards', () => {
   });
 
   it('should never throw when calling all sound methods in server context', async () => {
-    const serverInstance = createTunely();
+    const serverInstance = createTonely();
 
     await expect(serverInstance.success()).resolves.toBeDefined();
     await expect(serverInstance.error()).resolves.toBeDefined();

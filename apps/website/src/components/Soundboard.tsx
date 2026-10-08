@@ -17,7 +17,7 @@ import {
   Wine,
   Droplet,
 } from 'lucide-react';
-import { tunely, type SoundName, type SoundTheme } from 'tunely';
+import { tonely, type SoundName, type SoundTheme } from 'tonely';
 
 interface SoundItem {
   name: SoundName;
@@ -134,14 +134,14 @@ export function Soundboard() {
       if (name === 'toggle') {
         const nextState = !toggleState;
         setToggleState(nextState);
-        tunely.play('toggle', {
+        tonely.play('toggle', {
           volume,
           pitch,
           theme: selectedTheme,
           active: nextState,
         });
       } else {
-        tunely.play(name, {
+        tonely.play(name, {
           volume,
           pitch,
           theme: selectedTheme,
@@ -157,9 +157,9 @@ export function Soundboard() {
   const toggleMute = () => {
     const nextMute = !isMuted;
     setIsMuted(nextMute);
-    tunely.setMuted(nextMute);
+    tonely.setMuted(nextMute);
     if (!nextMute) {
-      tunely.click({ volume });
+      tonely.click({ volume });
     }
   };
 
@@ -173,7 +173,7 @@ export function Soundboard() {
             <span>Interactive Audio Studio</span>
           </div>
           <h2 className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-            The Tunely Soundboard
+            The Tonely Soundboard
           </h2>
           <p className="mt-1 text-sm text-slate-400">
             Audition every procedural preset in real-time. Tweak sound palettes, master volume, and pitch multiplier.
@@ -237,7 +237,7 @@ export function Soundboard() {
             key={t.id}
             onClick={() => {
               setSelectedTheme(t.id);
-              tunely.play('pop', { theme: t.id, volume: 0.4 });
+              tonely.play('pop', { theme: t.id, volume: 0.4 });
             }}
             className={`rounded-lg px-3 py-1.5 text-xs font-medium transition cursor-pointer ${
               selectedTheme === t.id
@@ -285,7 +285,7 @@ export function Soundboard() {
 
               <div className="mt-4 flex items-center justify-between pt-2 border-t border-slate-800/60">
                 <code className="text-[11px] font-mono text-slate-300">
-                  tunely.{item.name}()
+                  tonely.{item.name}()
                 </code>
                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-800/80 text-slate-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
                   <Play className="h-3 w-3 fill-current ml-0.5" />

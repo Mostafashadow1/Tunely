@@ -3,12 +3,12 @@
 import React from "react";
 import Image from "next/image";
 import { Zap, CheckCircle2, XCircle, Wine, Sparkles } from "lucide-react";
-import { tunely, type SoundName } from "tunely";
+import { tonely, type SoundName } from "tonely";
 import { InstallTabs } from "./InstallTabs";
 
 export function Hero() {
   const playSound = (name: SoundName) => {
-    tunely.play(name, { volume: 0.8 });
+    tonely.play(name, { volume: 0.8 });
   };
 
   return (
@@ -31,7 +31,7 @@ export function Hero() {
 
       {/* Subtitle */}
       <p className="mx-auto mt-6 max-w-2xl text-base text-slate-400 sm:text-lg">
-        Modern SaaS apps deserve rich tactile feedback. Tunely synthesizes
+        Modern SaaS apps deserve rich tactile feedback. Tonely synthesizes
         clean, pleasant micro-interactions at runtime with{" "}
         <strong>zero external audio files</strong>,{" "}
         <strong>zero HTTP requests</strong>, and{" "}

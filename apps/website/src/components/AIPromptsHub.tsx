@@ -2,50 +2,50 @@
 
 import React, { useState } from 'react';
 import { Sparkles, Copy, Check } from 'lucide-react';
-import { tunely } from 'tunely';
+import { tonely } from 'tonely';
 
 const AI_PROMPTS = [
   {
-    title: 'Integrate Tunely with Sonner & Shadcn UI',
+    title: 'Integrate Tonely with Sonner & Shadcn UI',
     target: 'Cursor / Claude / Copilot',
     description: 'Wrap your existing toast notifications to automatically trigger harmonic procedural sounds.',
-    prompt: `I want to integrate 'tunely' into my Next.js / React project. 
-Please install 'tunely' and wrap my toast helper (Sonner / Shadcn UI) so that:
-- toast.success() plays tunely.success()
-- toast.error() plays tunely.error()
-- toast.warning() plays tunely.warning()
-- toast.info() plays tunely.info()
+    prompt: `I want to integrate 'tonely' into my Next.js / React project. 
+Please install 'tonely' and wrap my toast helper (Sonner / Shadcn UI) so that:
+- toast.success() plays tonely.success()
+- toast.error() plays tonely.error()
+- toast.warning() plays tonely.warning()
+- toast.info() plays tonely.info()
 Ensure it is 100% SSR-safe and works seamlessly inside client components.`,
   },
   {
     title: 'Sound Feedback for Next.js Server Actions & Forms',
     target: 'Next.js 15 / Cursor',
     description: 'Add instant tactile feedback on form submit, success on 200, error on failure.',
-    prompt: `Please update my form submissions and Next.js Server Actions using 'tunely':
-1. When the user clicks the submit button, trigger tunely.click()
-2. If the Server Action returns success or HTTP 200, play tunely.success()
-3. If the Server Action returns validation errors or fails, play tunely.error()
-Import { tunely } from 'tunely' and keep all audio calls strictly client-side.`,
+    prompt: `Please update my form submissions and Next.js Server Actions using 'tonely':
+1. When the user clicks the submit button, trigger tonely.click()
+2. If the Server Action returns success or HTTP 200, play tonely.success()
+3. If the Server Action returns validation errors or fails, play tonely.error()
+Import { tonely } from 'tonely' and keep all audio calls strictly client-side.`,
   },
   {
     title: 'Automatic Fetch / Axios Response Status Interceptor',
     target: 'TanStack Query / Axios',
     description: 'Automatically chime on any API call depending on HTTP status code.',
     prompt: `I am using fetch / TanStack Query in my web app. 
-Please configure a centralized helper using 'tunely' that maps HTTP responses:
-- Status 2xx -> tunely.fromStatus(response.status) [success chime]
-- Status 4xx / 5xx -> tunely.fromStatus(response.status) [gentle error tone]
+Please configure a centralized helper using 'tonely' that maps HTTP responses:
+- Status 2xx -> tonely.fromStatus(response.status) [success chime]
+- Status 4xx / 5xx -> tonely.fromStatus(response.status) [gentle error tone]
 Ensure audio playback is smooth, non-blocking, and respects user gestures.`,
   },
   {
     title: 'Add Micro-interactions to Buttons & Modals',
     target: 'v0 / Antigravity / Cursor',
     description: 'Enhance navigation, dialogs, and toggle switches with responsive micro sounds.',
-    prompt: `Enhance my UI components using the 'tunely' library:
-- Add tunely.click() to primary action buttons and tab switches
-- Add tunely.pop() when modals or dropdown menus open
-- Add tunely.toggle(activeState) to switches and checkboxes
-- Add tunely.delete() when deleting items
+    prompt: `Enhance my UI components using the 'tonely' library:
+- Add tonely.click() to primary action buttons and tab switches
+- Add tonely.pop() when modals or dropdown menus open
+- Add tonely.toggle(activeState) to switches and checkboxes
+- Add tonely.delete() when deleting items
 Keep it clean, subtle, and responsive with zero external audio assets.`,
   },
 ];
@@ -55,7 +55,7 @@ export function AIPromptsHub() {
 
   const copyToClipboard = (text: string, index: number) => {
     navigator.clipboard.writeText(text);
-    tunely.pop({ volume: 0.45 });
+    tonely.pop({ volume: 0.45 });
     setCopiedIndex(index);
     setTimeout(() => setCopiedIndex(null), 2500);
   };

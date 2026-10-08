@@ -48,7 +48,7 @@ export interface SoundOptions {
   active?: boolean;
 }
 
-export interface TunelyConfig {
+export interface TonelyConfig {
   /**
    * Global master volume between 0 and 1.
    * @default 0.7
@@ -68,7 +68,9 @@ export interface TunelyConfig {
   muted?: boolean;
 }
 
-export interface TunelyInstance {
+export type TunelyConfig = TonelyConfig;
+
+export interface TonelyInstance {
   /**
    * Play any sound preset with optional overrides.
    */
@@ -159,3 +161,5 @@ export interface TunelyInstance {
    */
   getTheme(): SoundTheme;
 }
+
+export type TunelyInstance = TonelyInstance;

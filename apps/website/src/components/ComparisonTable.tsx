@@ -10,7 +10,7 @@ export function ComparisonTable() {
           Why Procedural Web Audio API Wins
         </h2>
         <p className="mt-1 text-sm text-slate-400">
-          A side-by-side comparison between conventional MP3 asset hosting and Tunely.
+          A side-by-side comparison between conventional MP3 asset hosting and Tonely.
         </p>
 
         <div className="mt-8 overflow-x-auto">
@@ -19,7 +19,7 @@ export function ComparisonTable() {
               <tr className="border-b border-slate-800 text-slate-400 font-mono">
                 <th className="pb-3 pr-4">Metric</th>
                 <th className="pb-3 px-4 text-slate-500">External Audio Files (MP3 / WAV)</th>
-                <th className="pb-3 pl-4 text-cyan-400 font-bold">Tunely (Procedural)</th>
+                <th className="pb-3 pl-4 text-cyan-400 font-bold">Tonely (Procedural)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-800/60 font-mono text-xs">

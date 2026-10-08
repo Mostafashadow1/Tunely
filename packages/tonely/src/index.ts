@@ -7,8 +7,8 @@ import type {
   SoundName,
   SoundOptions,
   SoundTheme,
-  TunelyConfig,
-  TunelyInstance,
+  TonelyConfig,
+  TonelyInstance,
 } from './types';
 
 export * from './types';
@@ -16,15 +16,15 @@ export { soundFromStatus } from './utils/status';
 export { isBrowser, isAudioSupported } from './utils/ssr';
 
 /**
- * Creates an isolated Tunely audio instance.
+ * Creates an isolated Tonely audio instance.
  */
-export function createTunely(config?: TunelyConfig): TunelyInstance & {
+export function createTonely(config?: TonelyConfig): TonelyInstance & {
   wrapFetch: (customFetch?: typeof fetch) => (input: RequestInfo | URL, init?: RequestInit, opts?: SoundOptions) => Promise<Response>;
   track: <T>(promise: Promise<T>, opts?: SoundOptions) => Promise<T>;
 } {
   const engine = new AudioEngine(config);
 
-  const instance: TunelyInstance = {
+  const instance: TonelyInstance = {
     async play(name: SoundName, options?: SoundOptions): Promise<boolean> {
       // 100% SSR Safe: Return gracefully on server
       if (!isBrowser() || !isAudioSupported() || engine.isMuted()) {
@@ -126,26 +126,30 @@ export function createTunely(config?: TunelyConfig): TunelyInstance & {
   };
 }
 
+// Backward compatibility alias
+export const createTunely = createTonely;
+
 /**
- * Global default Tunely singleton.
+ * Global default Tonely singleton.
  * Ready for immediate zero-config use across React, Vue, Next.js, and Vanilla JS.
  */
-export const tunely = createTunely();
+export const tonely = createTonely();
+export const tunely = tonely;
 
 // Direct top-level functional helpers
-export const play = (name: SoundName, opts?: SoundOptions) => tunely.play(name, opts);
-export const success = (opts?: SoundOptions) => tunely.success(opts);
-export const error = (opts?: SoundOptions) => tunely.error(opts);
-export const warning = (opts?: SoundOptions) => tunely.warning(opts);
-export const info = (opts?: SoundOptions) => tunely.info(opts);
-export const click = (opts?: SoundOptions) => tunely.click(opts);
-export const pop = (opts?: SoundOptions) => tunely.pop(opts);
-export const toggle = (active?: boolean, opts?: SoundOptions) => tunely.toggle(active, opts);
-export const deleteSound = (opts?: SoundOptions) => tunely.delete(opts);
-export const glass = (opts?: SoundOptions) => tunely.glass(opts);
-export const bubble = (opts?: SoundOptions) => tunely.bubble(opts);
-export const fromStatus = (status: number, opts?: SoundOptions) => tunely.fromStatus(status, opts);
-export const wrapFetch = tunely.wrapFetch;
-export const track = tunely.track;
+export const play = (name: SoundName, opts?: SoundOptions) => tonely.play(name, opts);
+export const success = (opts?: SoundOptions) => tonely.success(opts);
+export const error = (opts?: SoundOptions) => tonely.error(opts);
+export const warning = (opts?: SoundOptions) => tonely.warning(opts);
+export const info = (opts?: SoundOptions) => tonely.info(opts);
+export const click = (opts?: SoundOptions) => tonely.click(opts);
+export const pop = (opts?: SoundOptions) => tonely.pop(opts);
+export const toggle = (active?: boolean, opts?: SoundOptions) => tonely.toggle(active, opts);
+export const deleteSound = (opts?: SoundOptions) => tonely.delete(opts);
+export const glass = (opts?: SoundOptions) => tonely.glass(opts);
+export const bubble = (opts?: SoundOptions) => tonely.bubble(opts);
+export const fromStatus = (status: number, opts?: SoundOptions) => tonely.fromStatus(status, opts);
+export const wrapFetch = tonely.wrapFetch;
+export const track = tonely.track;
 
-export default tunely;
+export default tonely;

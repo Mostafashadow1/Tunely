@@ -15,7 +15,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.7.0",
-    "tunely": "workspace:*"
+    "tonely": "workspace:*"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",

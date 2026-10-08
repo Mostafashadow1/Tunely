@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Github } from "lucide-react";
 import { InstallTabs } from "./InstallTabs";
-import { tunely } from "tunely";
+import { tonely } from "tonely";
 
 export function Header() {
   return (
@@ -13,12 +13,12 @@ export function Header() {
         <div className="flex items-center gap-3">
           <a
             href="/"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="flex items-center gap-2.5 group"
           >
             <Image
               src="/logo.png"
-              alt="Tunely Logo"
+              alt="Tonely Logo"
               width={36}
               height={36}
               className="h-full w-full object-contain"
@@ -27,7 +27,7 @@ export function Header() {
 
             <div className="flex items-center gap-2">
               <span className="text-lg font-black tracking-tight text-white group-hover:text-cyan-300 transition">
-                TUNELY
+                TONELY
               </span>
               <span className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-2 py-0.5 text-[10px] font-mono font-semibold text-cyan-300">
                 v0.1.0
@@ -40,28 +40,28 @@ export function Header() {
         <nav className="hidden lg:flex items-center gap-6">
           <a
             href="#soundboard"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="text-xs font-medium text-slate-300 hover:text-cyan-400 transition"
           >
             Soundboard
           </a>
           <a
             href="#prompts"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="text-xs font-medium text-slate-300 hover:text-cyan-400 transition"
           >
             AI Prompts
           </a>
           <a
             href="#code"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="text-xs font-medium text-slate-300 hover:text-cyan-400 transition"
           >
             Code Demos
           </a>
           <a
             href="#comparison"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="text-xs font-medium text-slate-300 hover:text-cyan-400 transition"
           >
             Benchmark
@@ -77,12 +77,12 @@ export function Header() {
 
           {/* Official NPM Link & Icon */}
           <a
-            href="https://www.npmjs.com/package/tunely"
+            href="https://www.npmjs.com/package/tonely"
             target="_blank"
             rel="noreferrer"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="flex items-center gap-1.5 rounded-xl border border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/20 px-2.5 py-1.5 text-xs font-semibold text-rose-300 hover:text-white transition shadow-sm group cursor-pointer"
-            title="View tunely on npm"
+            title="View tonely on npm"
           >
             {/* Official NPM SVG Icon */}
             <svg
@@ -100,7 +100,7 @@ export function Header() {
             href="https://github.com/Mostafashadow1/tunely"
             target="_blank"
             rel="noreferrer"
-            onClick={() => tunely.click({ volume: 0.25 })}
+            onClick={() => tonely.click({ volume: 0.25 })}
             className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition shadow-sm group cursor-pointer"
             title="Star on GitHub"
             aria-label="GitHub Repository"

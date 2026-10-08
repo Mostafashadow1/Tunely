@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tunely.dev"),
-  title: "Tunely — Zero-asset, Synthesized UI Sounds for Modern Web",
+  metadataBase: new URL("https://tonely.dev"),
+  title: "Tonely — Zero-asset, Synthesized UI Sounds for Modern Web",
   description:
     "Ultra-lightweight (< 1.5 KB), procedural sound design system for Next.js, React, Vue, and Vanilla JS. Zero MP3s, zero network latency, 100% Web Audio API synthesis.",
   keywords: [
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "react sounds",
     "nextjs audio",
     "synthesized sound",
-    "tunely",
+    "tonely",
   ],
   authors: [
     {
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     apple: "/logo.png",
   },
   openGraph: {
-    title: "Tunely — Zero-asset, Synthesized UI Sounds",
+    title: "Tonely — Zero-asset, Synthesized UI Sounds",
     description:
       "Ultra-lightweight procedural UI sound synthesis for modern web apps. Zero external audio assets, zero latency.",
     images: [
-      { url: "/cover.jpeg", width: 1024, height: 571, alt: "Tunely Cover" },
+      { url: "/cover.jpeg", width: 1024, height: 571, alt: "Tonely Cover" },
     ],
   },
 };
