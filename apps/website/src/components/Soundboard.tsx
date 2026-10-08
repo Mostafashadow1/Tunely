@@ -164,7 +164,7 @@ export function Soundboard() {
   };
 
   return (
-    <section id="soundboard" className="mt-28 scroll-mt-20">
+    <section id="soundboard" className="mt-28 scroll-mt-20" aria-labelledby="soundboard-heading">
       {/* Studio Controls Header */}
       <div className="flex flex-col items-start justify-between gap-4 border-b border-slate-800 pb-6 sm:flex-row sm:items-end">
         <div>
@@ -172,7 +172,7 @@ export function Soundboard() {
             <Sliders className="h-4 w-4" />
             <span>Interactive Audio Studio</span>
           </div>
-          <h2 className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+          <h2 id="soundboard-heading" className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
             The Tonely Soundboard
           </h2>
           <p className="mt-1 text-sm text-slate-400">
@@ -183,7 +183,9 @@ export function Soundboard() {
         {/* Global Controls: Volume, Mute, Pitch */}
         <div className="flex flex-wrap items-center gap-4 rounded-xl border border-slate-800 bg-slate-900/70 p-3 shadow-inner">
           <button
+            type="button"
             onClick={toggleMute}
+            aria-label={isMuted ? "Unmute sounds" : "Mute sounds"}
             className="flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:bg-slate-700 cursor-pointer"
           >
             {isMuted ? (
@@ -200,28 +202,32 @@ export function Soundboard() {
           </button>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-slate-400">Vol:</span>
+            <label htmlFor="volume-range" className="text-xs font-medium text-slate-400">Vol:</label>
             <input
+              id="volume-range"
               type="range"
               min="0"
               max="1"
               step="0.05"
               value={volume}
               onChange={(e) => setVolume(parseFloat(e.target.value))}
+              aria-label="Master volume control"
               className="h-1.5 w-20 cursor-pointer accent-cyan-400"
             />
             <span className="w-8 text-right font-mono text-xs text-slate-300">{Math.round(volume * 100)}%</span>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs font-medium text-slate-400">Pitch:</span>
+            <label htmlFor="pitch-range" className="text-xs font-medium text-slate-400">Pitch:</label>
             <input
+              id="pitch-range"
               type="range"
               min="0.5"
               max="1.8"
               step="0.1"
               value={pitch}
               onChange={(e) => setPitch(parseFloat(e.target.value))}
+              aria-label="Pitch multiplier control"
               className="h-1.5 w-20 cursor-pointer accent-cyan-400"
             />
             <span className="w-8 text-right font-mono text-xs text-slate-300">{pitch.toFixed(1)}x</span>
@@ -234,6 +240,7 @@ export function Soundboard() {
         <span className="self-center pr-2 text-xs font-medium text-slate-400">Palette:</span>
         {THEMES.map((t) => (
           <button
+            type="button"
             key={t.id}
             onClick={() => {
               setSelectedTheme(t.id);
@@ -260,8 +267,17 @@ export function Soundboard() {
           return (
             <div
               key={item.name}
+              role="button"
+              tabIndex={0}
+              aria-label={`Audition ${item.label} sound effect`}
               onClick={() => handlePlaySound(item.name)}
-              className={`group relative flex cursor-pointer flex-col justify-between rounded-xl border p-4 transition duration-200 hover:-translate-y-1 hover:shadow-xl ${
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handlePlaySound(item.name);
+                }
+              }}
+              className={`group relative flex cursor-pointer flex-col justify-between rounded-xl border p-4 transition duration-200 hover:-translate-y-1 hover:shadow-xl focus:outline-hidden focus:ring-2 focus:ring-cyan-400 ${
                 item.color
               } ${isPlaying ? 'scale-105 border-cyan-400 shadow-lg shadow-cyan-500/30' : 'bg-slate-900/40'}`}
             >

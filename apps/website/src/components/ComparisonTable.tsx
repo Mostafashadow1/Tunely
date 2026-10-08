@@ -4,9 +4,9 @@ import React from 'react';
 
 export function ComparisonTable() {
   return (
-    <section id="comparison" className="mt-28 scroll-mt-20">
+    <section id="comparison" className="mt-28 scroll-mt-20" aria-labelledby="comparison-heading">
       <div className="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900/80 to-slate-950 p-6 sm:p-10">
-        <h2 className="text-xl font-bold text-white sm:text-2xl">
+        <h2 id="comparison-heading" className="text-xl font-bold text-white sm:text-2xl">
           Why Procedural Web Audio API Wins
         </h2>
         <p className="mt-1 text-sm text-slate-400">
@@ -14,7 +14,10 @@ export function ComparisonTable() {
         </p>
 
         <div className="mt-8 overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm">
+          <table
+            className="w-full text-left text-xs sm:text-sm"
+            aria-label="Comparison between conventional external audio assets and Tonely procedural audio synthesis"
+          >
             <thead>
               <tr className="border-b border-slate-800 text-slate-400 font-mono">
                 <th className="pb-3 pr-4">Metric</th>

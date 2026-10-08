@@ -37,7 +37,7 @@ export function Header() {
         </div>
 
         {/* Center / Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden lg:flex items-center gap-6" aria-label="Main Navigation">
           <a
             href="#soundboard"
             onClick={() => tonely.click({ volume: 0.25 })}
@@ -66,11 +66,18 @@ export function Header() {
           >
             Benchmark
           </a>
+          <a
+            href="#faq"
+            onClick={() => tonely.click({ volume: 0.25 })}
+            className="text-xs font-medium text-slate-300 hover:text-cyan-400 transition"
+          >
+            FAQ
+          </a>
         </nav>
 
         {/* Right side: Install Toggle + NPM + GitHub */}
         <div className="flex items-center gap-2.5">
-          {/* Header Toggle Install (like compressly) */}
+          {/* Header Toggle Install */}
           <div className="hidden sm:block">
             <InstallTabs compact />
           </div>
@@ -79,7 +86,7 @@ export function Header() {
           <a
             href="https://www.npmjs.com/package/tonely"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             onClick={() => tonely.click({ volume: 0.25 })}
             className="flex items-center gap-1.5 rounded-xl border border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/20 px-2.5 py-1.5 text-xs font-semibold text-rose-300 hover:text-white transition shadow-sm group cursor-pointer"
             title="View tonely on npm"
@@ -97,9 +104,9 @@ export function Header() {
 
           {/* GitHub Repo */}
           <a
-            href="https://github.com/Mostafashadow1/tunely"
+            href="https://github.com/Mostafashadow1/Tunely"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             onClick={() => tonely.click({ volume: 0.25 })}
             className="flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-900/80 hover:bg-slate-800 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition shadow-sm group cursor-pointer"
             title="Star on GitHub"

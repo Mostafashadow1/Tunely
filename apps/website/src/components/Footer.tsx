@@ -14,17 +14,18 @@ export function Footer() {
   return (
     <>
       {/* Call to Action Footer Strip */}
-      <section className="mt-24 text-center">
+      <section className="mt-24 text-center" aria-labelledby="cta-heading">
         <div className="rounded-2xl border border-cyan-500/20 bg-gradient-to-r from-cyan-950/30 via-slate-900/60 to-teal-950/30 p-8 sm:p-12">
-          <h3 className="text-2xl font-black text-white sm:text-3xl">
+          <h2 id="cta-heading" className="text-2xl font-black text-white sm:text-3xl">
             Ready to give your web applications tactile auditory polish?
-          </h3>
+          </h2>
           <p className="mx-auto mt-2 max-w-xl text-sm text-slate-400">
             Install the zero-dependency Tonely package now and start delighting
             your users with instant harmonic cues.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <button
+              type="button"
               onClick={copyInstall}
               className="flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-400 active:scale-95 cursor-pointer"
             >
@@ -32,9 +33,9 @@ export function Footer() {
               <span>pnpm add tonely</span>
             </button>
             <a
-              href="https://github.com/Mostafashadow1/tunely"
+              href="https://github.com/Mostafashadow1/Tunely"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               onClick={() => tonely.click({ volume: 0.25 })}
               className="flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:text-white cursor-pointer"
             >
@@ -52,7 +53,7 @@ export function Footer() {
             <div className="h-6 w-6 overflow-hidden rounded-md border border-cyan-500/30 bg-slate-900 p-0.5">
               <Image
                 src="/logo.png"
-                alt="Tunely"
+                alt="Tonely Logo"
                 width={24}
                 height={24}
                 className="h-full w-full object-contain"
@@ -66,26 +67,26 @@ export function Footer() {
             <a
               href="https://tone-ly.vercel.app/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-1 hover:text-cyan-400 transition"
             >
-              <span>tunely.vercel.app</span>
+              <span>tone-ly.vercel.app</span>
               <ExternalLink className="h-3 w-3" />
             </a>
             <span>•</span>
             <a
               href="https://www.npmjs.com/package/tonely"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="hover:text-rose-400 transition"
             >
               npm
             </a>
             <span>•</span>
             <a
-              href="https://github.com/Mostafashadow1/tunely"
+              href="https://github.com/Mostafashadow1/Tunely"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="hover:text-cyan-400 transition"
             >
               GitHub
@@ -97,7 +98,7 @@ export function Footer() {
             <a
               href="https://github.com/Mostafashadow1"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="font-medium text-cyan-400 hover:underline"
             >
               Mostafa Mohamed Abdalla

@@ -61,13 +61,13 @@ export function AIPromptsHub() {
   };
 
   return (
-    <section id="prompts" className="mt-28 scroll-mt-20">
+    <section id="prompts" className="mt-28 scroll-mt-20" aria-labelledby="prompts-heading">
       <div className="border-b border-slate-800 pb-6">
         <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-400">
           <Sparkles className="h-4 w-4" />
           <span>Supercharge Your Agent Workflow</span>
         </div>
-        <h2 className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+        <h2 id="prompts-heading" className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
           AI Prompts Hub for Cursor, Claude & v0
         </h2>
         <p className="mt-1 text-sm text-slate-400">

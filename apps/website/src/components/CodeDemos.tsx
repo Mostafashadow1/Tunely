@@ -127,13 +127,13 @@ export function CodeDemos() {
   };
 
   return (
-    <section id="code" className="mt-28 scroll-mt-20">
+    <section id="code" className="mt-28 scroll-mt-20" aria-labelledby="code-heading">
       <div className="border-b border-slate-800 pb-6">
         <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-400">
           <Code2 className="h-4 w-4" />
           <span>Universal DX & Full Isomorphic Safety</span>
         </div>
-        <h2 className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+        <h2 id="code-heading" className="mt-1 text-2xl font-bold tracking-tight text-white sm:text-3xl">
           Clean Integrations Across Any Stack
         </h2>
         <p className="mt-1 text-sm text-slate-400">
@@ -143,7 +143,7 @@ export function CodeDemos() {
 
       <div className="mt-6">
         {/* Framework Tabs */}
-        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3">
+        <div className="flex flex-wrap gap-2 border-b border-slate-800 pb-3" role="tablist" aria-label="Code Integration Frameworks">
           {[
             { id: 'react', label: 'React / useTonely' },
             { id: 'nextServerActions', label: 'Next.js 15 Server Actions' },
@@ -152,6 +152,9 @@ export function CodeDemos() {
             { id: 'vue', label: 'Vue 3' },
           ].map((tab) => (
             <button
+              type="button"
+              role="tab"
+              aria-selected={activeCodeTab === tab.id}
               key={tab.id}
               onClick={() => {
                 setActiveCodeTab(tab.id as keyof typeof CODE_EXAMPLES);
@@ -180,6 +183,7 @@ export function CodeDemos() {
               </span>
             </div>
             <button
+              type="button"
               onClick={copyCode}
               className="flex items-center gap-1.5 rounded-md border border-slate-700 bg-slate-800 px-2.5 py-1 text-xs text-slate-300 transition hover:bg-slate-700 cursor-pointer"
             >
