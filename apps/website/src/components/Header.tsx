@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Github, ExternalLink } from "lucide-react";
+import { Github } from "lucide-react";
 import { InstallTabs } from "./InstallTabs";
 import { tunely } from "tunely";
 
@@ -16,16 +16,15 @@ export function Header() {
             onClick={() => tunely.click({ volume: 0.25 })}
             className="flex items-center gap-2.5 group"
           >
-            <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-cyan-500/30 bg-slate-900/90 p-1 shadow-lg shadow-cyan-500/10 transition group-hover:border-cyan-400">
-              <Image
-                src="/logo.png"
-                alt="Tunely Logo"
-                width={36}
-                height={36}
-                className="h-full w-full object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Tunely Logo"
+              width={36}
+              height={36}
+              className="h-full w-full object-contain"
+              priority
+            />
+
             <div className="flex items-center gap-2">
               <span className="text-lg font-black tracking-tight text-white group-hover:text-cyan-300 transition">
                 TUNELY

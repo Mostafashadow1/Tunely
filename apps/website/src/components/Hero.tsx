@@ -74,18 +74,6 @@ export function Hero() {
       <div className="mt-8">
         <InstallTabs />
       </div>
-
-      {/* Showcase Compatibility Banner */}
-      <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/60 p-2 shadow-2xl backdrop-blur-sm">
-        <Image
-          src="/cover.jpeg"
-          alt="Tunely compatibility banner"
-          width={1024}
-          height={571}
-          className="h-auto w-full rounded-xl object-cover"
-          priority
-        />
-      </div>
     </section>
   );
 }

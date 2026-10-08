@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { Terminal, Github, ExternalLink } from 'lucide-react';
-import { tunely } from 'tunely';
+import React from "react";
+import Image from "next/image";
+import { Terminal, Github, ExternalLink } from "lucide-react";
+import { tunely } from "tunely";
 
 export function Footer() {
   const copyInstall = () => {
-    navigator.clipboard.writeText('pnpm add tunely');
+    navigator.clipboard.writeText("pnpm add tunely");
     tunely.pop({ volume: 0.4 });
   };
 
@@ -20,7 +20,8 @@ export function Footer() {
             Ready to give your web applications tactile auditory polish?
           </h3>
           <p className="mx-auto mt-2 max-w-xl text-sm text-slate-400">
-            Install the zero-dependency Tunely package now and start delighting your users with instant harmonic cues.
+            Install the zero-dependency Tunely package now and start delighting
+            your users with instant harmonic cues.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <button
@@ -49,7 +50,13 @@ export function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
           <div className="flex items-center gap-2.5">
             <div className="h-6 w-6 overflow-hidden rounded-md border border-cyan-500/30 bg-slate-900 p-0.5">
-              <Image src="/logo.png" alt="Tunely" width={24} height={24} className="h-full w-full object-contain" />
+              <Image
+                src="/logo.png"
+                alt="Tunely"
+                width={24}
+                height={24}
+                className="h-full w-full object-contain"
+              />
             </div>
             <span className="font-bold text-slate-300">TUNELY</span>
             <span>• MIT License</span>
@@ -86,7 +93,7 @@ export function Footer() {
           </div>
 
           <p>
-            Crafted by{' '}
+            Created by{" "}
             <a
               href="https://github.com/Mostafashadow1"
               target="_blank"
