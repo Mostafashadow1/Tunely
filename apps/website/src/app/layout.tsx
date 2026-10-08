@@ -1,36 +1,43 @@
-import type { Metadata } from 'next';
-import './globals.css';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tunely.dev'),
-  title: 'Tunely — Zero-asset, Synthesized UI Sounds for Modern Web',
+  metadataBase: new URL("https://tunely.dev"),
+  title: "Tunely — Zero-asset, Synthesized UI Sounds for Modern Web",
   description:
-    'Ultra-lightweight (< 1.5 KB), procedural sound design system for Next.js, React, Vue, and Vanilla JS. Zero MP3s, zero network latency, 100% Web Audio API synthesis.',
+    "Ultra-lightweight (< 1.5 KB), procedural sound design system for Next.js, React, Vue, and Vanilla JS. Zero MP3s, zero network latency, 100% Web Audio API synthesis.",
   keywords: [
-    'UI sound effects',
-    'web audio api',
-    'micro interactions',
-    'sound design system',
-    'earcon',
-    'react sounds',
-    'nextjs audio',
-    'synthesized sound',
-    'tunely',
+    "UI sound effects",
+    "web audio api",
+    "micro interactions",
+    "sound design system",
+    "earcon",
+    "react sounds",
+    "nextjs audio",
+    "synthesized sound",
+    "tunely",
   ],
-  authors: [{ name: 'Mostafa Mohamed Abdalla', url: 'https://github.com/Mostafashadow1' }],
+  authors: [
+    {
+      name: "Mostafa Mohamed Abdalla",
+      url: "https://github.com/Mostafashadow1",
+    },
+  ],
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: '/favicon.ico',
-    apple: '/icon.png',
+    shortcut: "/favicon.ico",
+    apple: "/logo.png",
   },
   openGraph: {
-    title: 'Tunely — Zero-asset, Synthesized UI Sounds',
+    title: "Tunely — Zero-asset, Synthesized UI Sounds",
     description:
-      'Ultra-lightweight procedural UI sound synthesis for modern web apps. Zero external audio assets, zero latency.',
-    images: [{ url: '/tunely-cover.png', width: 1024, height: 571, alt: 'Tunely Cover' }],
+      "Ultra-lightweight procedural UI sound synthesis for modern web apps. Zero external audio assets, zero latency.",
+    images: [
+      { url: "/cover.jpeg", width: 1024, height: 571, alt: "Tunely Cover" },
+    ],
   },
 };
 
